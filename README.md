@@ -7,7 +7,7 @@ Leaky-Reluplex : The extended algorithm of Reluplex, which is used to verify the
 #### The codes of Reluplex:
 https://github.com/guykatzz/ReluplexCav2017
 
-##### Compilation Instructions
+#### Compilation Instructions
 
 The implementation was run and tested on Ubuntu 16.04.
 
