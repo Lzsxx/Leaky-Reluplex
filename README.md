@@ -27,4 +27,6 @@ The implementation was run and tested on Ubuntu 16.04.
 
       ./test.sh
 
+The test log can see the file ./test.txt
+
 The test case in Leaky-Reluplex is the same as in Reluplex except that the k value of Leaky ReLU function is 0.2.
