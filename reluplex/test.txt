@@ -1,0 +1,844 @@
+Float Utils: default epsilon = 0.000000000100000
+Almost-broken nuking marging: 0.001000000000000
+the var : 0 	_lowerBounds :  0.00 	_upperBounds :  1.00 	
+the var : 1 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 2 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 3 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 4 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 5 	_lowerBounds :  0.50 	_upperBounds :  1.00 	
+the var : 6 	_lowerBounds :  0.00 	_upperBounds :  0.00 	
+the var : 7 	_lowerBounds :  0.00 	_upperBounds :  0.00 	
+the var : 8 	_lowerBounds :  0.00 	_upperBounds :  0.00 	
+		Update: x4 += 0.50
+Checking invariants after initial update
+makeAllBoundsFinite -- Starting (0 vars with infinite bounds)
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.0000   <=  9.00
+    x2f|                                                        | -9.00 <= 0.0000   <=  9.00
+    x3b|                                                        | -9.00 <= 0.0000   <=  9.00
+    x3f|                                                        | -9.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+ B   x5|              -1.00       -1.00  1.00 -1.00             |  0.00 <= 0.5000 * <=  0.00
+ B   x6|  -1.00  1.00                               -1.00       |  0.00 <= 0.0000   <=  0.00
+ B   x7|   1.00              1.00                         -1.00 |  0.00 <= 0.0000   <=  0.00
+
+makeAllBoundsFinite -- Done (0 vars with infinite bounds)
+the var : 0 	_lowerBounds :  0.00 	_upperBounds :  1.00 	
+the var : 1 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 2 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 3 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 4 	_lowerBounds : -9.00 	_upperBounds :  9.00 	
+the var : 5 	_lowerBounds :  0.50 	_upperBounds :  1.00 	
+the var : 6 	_lowerBounds :  0.00 	_upperBounds :  0.00 	
+the var : 7 	_lowerBounds :  0.00 	_upperBounds :  0.00 	
+the var : 8 	_lowerBounds :  0.00 	_upperBounds :  0.00 	
+eliminateAuxVariables starting
+
+PivotAndUpdate: <x5, -0.50, x3f>
+		Pivot: x5 <--> x3f
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 4 calcs)
+		Update: x5 += -0.50
+
+Variable x5 fixed at zero. Eliminating...
+
+PivotAndUpdate: <x6,  0.00, x2b>
+		Pivot: x6 <--> x2b
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 3 calcs)
+
+Variable x6 fixed at zero. Eliminating...
+
+PivotAndUpdate: <x7,  0.00, x3b>
+		Pivot: x7 <--> x3b
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 3 calcs)
+
+Variable x7 fixed at zero. Eliminating...
+eliminateAuxVariables finished successfully
+Initialization steps over.
+
+----- printStatistics():after initialize() ----
+
+22:59:09 Statistics update:
+	Calls to 'progress': 0. Total time: 0 milli. Average: 0 milli
+	Pivot operations: 3. Total pivot time: 0 milli.
+	Average pivot time: 0 milli
+	Average time per calcuation in pivot: 0.00000 milli
+	Average number of calculations in pivot: 3
+	Average number of broken relues per 'progress': 0
+	Broken Relus Fixed: 0 (Fs: 0, Bs: 0, fix-by-pivot: 0, fix-by-update: 0)
+	Relu-to-OOB step ratio: 0 / 0 = 0.000000%. Avg oob steps per relu: 0.00.
+	Almost broken relus encountered: 0. Nuked: 0
+	Time in TightenAllBounds: 0 milli. Bounds tightened: 0
+	Relu pairs dissolved: 0. Num splits: 0. Num merges: 0 (remaining: 2 / 2)
+	Num LP solver invocations: 0. Found solution: 0. No Solution: 0. Failed: 0. Incorrect assignments: 0.
+		Total time in LP solver: 0 milli. Max: 0 milli. Avg per invocation: 0 milli
+		Number of pivots in LP solver: 0. Average time per LP pivot operation: 0 milli
+		Total time extracting tableaus after LP solved: 0 milli. Average: 0 milli.
+		Total time evaulating GLPK rows: 0
+		Glpk bound reports: 0. On slacks: 0 (= 0%). Ignored due to small coefficients: 0. Used: 0.00%
+		Number of GLPK-derived bounds: 0. On slacks: 0 (= 0.00%). Time: 0 milli. Relus consequently dissolved: 0
+		Fix-relu-invariant hook invocations: 0. Actual repairs: 0 (= 0%). Ignore to prevent cycles: 0
+	Average number of broken relu pairs after glpk invocation: 0.000000. Max: 0. Broken and non-basic pairs: 0
+	Vars with infinite bounds: 0 / 9
+	Eliminated vars: 3
+	Stack: Current depth is: 0 (maximal = 0, min second phase = 0).
+	       So far: 0 splits, 0 merges, 0 pops. Total visited states: 0
+		Pops caused by conflict analysis: 0
+		Total time in smtCore: 0 milli
+	Current degradation: 0.0000000000. Time spent checking: 0 milli. Max measured: 0.0000000000.
+	Number of restorations: 0. Total time: 0 milli. Average: 0.000000
+
+
+	Summary: Total: 0 milli
+		1. GLPK: 0 milli (0%) 
+		2. Extraction + Postprocessing: 0 milli (0%)
+		3. Tightening bounds: 0 milli (0%)
+		4. Stack operations: 0 milli (0%)
+		5. Tableau restoration operations: 0 milli (0%)
+		6. Unaccounted for: 0 milli (0%)
+
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000   <=  9.00
+    x2f|                                                        | -9.00 <= 0.0000   <=  9.00
+ B  x3b|  -1.00             -1.00                               | -9.00 <= 0.0000 * <=  9.00
+ B  x3f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Starting the main loop
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000   <=  9.00
+    x2f|                                                        | -9.00 <= 0.0000   <=  9.00
+ B  x3b|  -1.00             -1.00                               | -9.00 <= 0.0000 * <=  9.00
+ B  x3f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x3f
+fixBrokenReluVariable Starting: var = x3b, delta = 0.500000
+fixBrokenReluVariable Starting: var = x3f, delta = -0.500000
+
+PivotAndUpdate: <x3f, -0.50, x2f>
+		Pivot: x3f <--> x2f
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 3 calcs)
+		Update: x3f += -0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000 * <=  9.00
+ B  x3b|  -1.00             -1.00                               | -9.00 <= 0.0000   <=  9.00
+    x3f|                                                        | -9.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.500000
+
+PivotAndUpdate: <x2b,  0.50, x1>
+		Pivot: x2b <--> x1
+			Pivot--clearing 2 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 5 calcs)
+		Update: x2b += 0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.5000   <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000   <=  9.00
+ B  x3b|        -1.00       -1.00                               | -9.00 <= -0.5000 * <=  9.00
+    x3f|                                                        | -9.00 <= 0.0000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x3f
+fixBrokenReluVariable Starting: var = x3b, delta = 0.500000
+
+PivotAndUpdate: <x3b,  0.50, x2b>
+		Pivot: x3b <--> x2b
+			Pivot--clearing 2 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 5 calcs)
+		Update: x3b += 0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00             -1.00                               |  0.00 <= 0.0000   <=  1.00
+ B  x2b|        -1.00       -1.00                               | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        | -9.00 <= 0.0000   <=  9.00
+    x3f|                                                        | -9.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.500000
+
+PivotAndUpdate: <x2b,  0.50, x3b>
+		Pivot: x2b <--> x3b
+			Pivot--clearing 2 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 5 calcs)
+		Update: x2b += 0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.5000   <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000   <=  9.00
+ B  x3b|        -1.00       -1.00                               | -9.00 <= -0.5000 * <=  9.00
+    x3f|                                                        | -9.00 <= 0.0000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+Update lower bound: non-negative lower bound
+UnifyReluPair called with f = x3f, b = x3b
+Unifying relu pair: x3b, x3f
+		Pivot: x3b <--> x2b
+			Pivot--clearing 2 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 5 calcs)
+Both variables are now non-basic
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00             -1.00                               |  0.00 <= 0.5000   <=  1.00
+ B  x2b|        -1.00       -1.00                               | -9.00 <= 0.5000   <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000   <=  9.00
+    x3b|                                                        |  0.00 <= -0.5000 * <=  9.00
+    x3f|                                                        |  0.00 <= 0.0000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Update: x3b += 0.50
+Mark var as dissolved: 4 (Type: Merge)
+Tableau after unification:
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00                   -1.00                         |  0.00 <= 0.0000   <=  1.00
+ B  x2b|        -1.00             -1.00                         | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+    x3f|                                                        |  0.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+Attempting broken-relu fix on var: x3f
+fixBrokenReluVariable Starting: var = x3b, delta = 0.000000
+Var x3b isn't basic; no pivot needed, simply updating
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00                   -1.00                         |  0.00 <= 0.0000   <=  1.00
+ B  x2b|        -1.00             -1.00                         | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+    x3f|                                                        |  0.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.500000
+fixBrokenReluVariable Starting: var = x2f, delta = -0.500000
+
+PivotAndUpdate: <x2f, -0.50, x3f>
+		Pivot: x2f <--> x3f
+			Pivot--clearing 3 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 11 calcs)
+		Update: x2f += -0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00        1.00             -1.00                   |  0.00 <= -0.5000 * <=  1.00
+ B  x2b|        -1.00  1.00             -1.00                   | -9.00 <= -0.5000 * <=  9.00
+    x2f|                                                        | -9.00 <= 0.0000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|              -1.00       -1.00  1.00                   |  0.00 <= 0.5000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Progress: have OOB vars
+GLPK: number of iterations = 2
+LP solver solved the problem. Updating tableau and assignment
+		Pivot: x1 <--> x2f
+			Pivot--clearing 3 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 13 calcs)
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|   1.00       -1.00              1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|  -1.00                   -1.00                         |  0.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.500000
+
+PivotAndUpdate: <x2b,  0.50, x1>
+		Pivot: x2b <--> x1
+			Pivot--clearing 3 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 8 calcs)
+		Update: x2b += 0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.5000 * <=  9.00
+ B  x2f|         1.00 -1.00              1.00                   | -9.00 <= 1.0000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|        -1.00             -1.00                         |  0.00 <= -0.5000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Progress: have OOB vars
+GLPK: number of iterations = 3
+LP solver solved the problem. Updating tableau and assignment
+		Pivot: x1 <--> x2b
+			Pivot--clearing 3 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 8 calcs)
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|   1.00       -1.00              1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|  -1.00                   -1.00                         |  0.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+Update lower bound: non-negative lower bound
+UnifyReluPair called with f = x2f, b = x2b
+Unifying relu pair: x2b, x2f
+		Pivot: x2b <--> x1
+			Pivot--clearing 3 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 8 calcs)
+		Pivot: x2f <--> x4
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 3 calcs)
+Both variables are now non-basic
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.0000   <=  1.00
+    x2b|                                                        |  0.00 <= 0.0000 * <=  9.00
+    x2f|                                                        |  0.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|        -1.00             -1.00                         |  0.00 <= 0.0000   <=  9.00
+ B   x4|        -1.00  1.00             -1.00                   |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Update: x2b += 0.50
+Mark var as dissolved: 2 (Type: Merge)
+Tableau after unification:
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00        1.00                                     |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        |  0.00 <= 0.5000   <=  9.00
+    x2f|                                                        |  0.00 <= 0.5000   <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|              -1.00       -1.00                         |  0.00 <= -0.5000 * <=  9.00
+ B   x4|                                -1.00                   |  0.50 <= 0.0000 * <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.000000
+Var x2b isn't basic; no pivot needed, simply updating
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00        1.00                                     |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        |  0.00 <= 0.5000   <=  9.00
+    x2f|                                                        |  0.00 <= 0.5000   <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|              -1.00       -1.00                         |  0.00 <= -0.5000 * <=  9.00
+ B   x4|                                -1.00                   |  0.50 <= 0.0000 * <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Progress: have OOB vars
+GLPK report soi: 0.5000000000
+GLPK: number of iterations = 2
+LP solver showed no solution exists
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|   1.00       -1.00              1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|  -1.00                   -1.00                         |  0.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Pivot: x2b <--> x1
+			Pivot--clearing 3 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 8 calcs)
+		Pivot: x2f <--> x4
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 3 calcs)
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.0000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.0000 * <=  0.00
+    x2f|                                                        | -9.00 <= 0.5000 * <=  0.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|        -1.00             -1.00                         |  0.00 <= 0.0000   <=  9.00
+ B   x4|        -1.00  1.00             -1.00                   |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.0000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.0000 * <=  0.00
+ B  x2f|         0.20 -1.00                                     | -9.00 <= 0.5000 * <=  0.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|        -1.00             -1.00                         |  0.00 <= 0.0000   <=  9.00
+ B   x4|        -0.80                   -1.00                   |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Update: x2b += 2.50
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 2.5000 * <=  1.00
+    x2b|                                                        | -9.00 <= 2.5000 * <=  0.00
+ B  x2f|         0.20 -1.00                                     | -9.00 <= 0.5000 * <=  0.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|        -1.00             -1.00                         |  0.00 <= -2.5000 * <=  9.00
+ B   x4|        -0.80                   -1.00                   |  0.50 <= -2.0000 * <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Mark var as dissolved: 2 (Type: Split)
+		Update: x2b += -2.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.0000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.0000   <=  0.00
+ B  x2f|         0.20 -1.00                                     | -9.00 <= 0.0000   <=  0.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|        -1.00             -1.00                         |  0.00 <= 0.0000   <=  9.00
+ B   x4|        -0.80                   -1.00                   |  0.50 <= 0.0000 * <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Progress: have OOB vars
+GLPK report soi: 0.5000000000
+GLPK: number of iterations = 1
+LP solver showed no solution exists
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 0.0000   <=  1.00
+ B  x2b|   1.00 -1.00                                           | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|   1.00       -1.00              1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        |  0.00 <= 0.0000   <=  9.00
+ B  x3f|  -1.00                   -1.00                         |  0.00 <= 0.0000   <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.5000   <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000   <=  9.00
+ B  x3b|        -1.00       -1.00                               | -9.00 <= -0.5000 * <=  9.00
+    x3f|                                                        | -9.00 <= 0.0000 * <=  9.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Pivot: x3b <--> x2b
+			Pivot--clearing 2 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 5 calcs)
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00             -1.00                               |  0.00 <= 0.5000   <=  1.00
+ B  x2b|        -1.00       -1.00                               | -9.00 <= 0.5000   <=  9.00
+ B  x2f|              -1.00       -1.00  1.00                   | -9.00 <= 0.5000   <=  9.00
+    x3b|                                                        | -9.00 <= -0.5000 * <=  0.00
+    x3f|                                                        | -9.00 <= 0.0000 * <=  0.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00             -1.00                               |  0.00 <= 0.5000   <=  1.00
+ B  x2b|        -1.00       -1.00                               | -9.00 <= 0.5000   <=  9.00
+ B  x2f|              -1.00 -0.20        1.00                   | -9.00 <= 0.5000   <=  9.00
+    x3b|                                                        | -9.00 <= -0.5000 * <=  0.00
+ B  x3f|                     0.20 -1.00                         | -9.00 <= 0.0000 * <=  0.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Update: x3b += 0.50
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00             -1.00                               |  0.00 <= 0.0000   <=  1.00
+ B  x2b|        -1.00       -1.00                               | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|              -1.00 -0.20        1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        | -9.00 <= 0.0000   <=  0.00
+ B  x3f|                     0.20 -1.00                         | -9.00 <= 0.0000 * <=  0.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Mark var as dissolved: 4 (Type: Split)
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00             -1.00                               |  0.00 <= 0.0000   <=  1.00
+ B  x2b|        -1.00       -1.00                               | -9.00 <= 0.0000 * <=  9.00
+ B  x2f|              -1.00 -0.20        1.00                   | -9.00 <= 0.5000 * <=  9.00
+    x3b|                                                        | -9.00 <= 0.0000   <=  0.00
+ B  x3f|                     0.20 -1.00                         | -9.00 <= 0.0000   <=  0.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.500000
+
+PivotAndUpdate: <x2b,  0.50, x3b>
+		Pivot: x2b <--> x3b
+			Pivot--clearing 4 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 11 calcs)
+		Update: x2b += 0.50
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.5000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.5000 * <=  9.00
+ B  x2f|         0.20 -1.00              1.00                   | -9.00 <= 0.6000 * <=  9.00
+ B  x3b|        -1.00       -1.00                               | -9.00 <= -0.5000   <=  0.00
+ B  x3f|        -0.20             -1.00                         | -9.00 <= -0.1000   <=  0.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.100000
+Var x2b isn't basic; no pivot needed, simply updating
+		Update: x2b += 0.10
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.6000   <=  1.00
+    x2b|                                                        | -9.00 <= 0.6000 * <=  9.00
+ B  x2f|         0.20 -1.00              1.00                   | -9.00 <= 0.6200 * <=  9.00
+ B  x3b|        -1.00       -1.00                               | -9.00 <= -0.6000   <=  0.00
+ B  x3f|        -0.20             -1.00                         | -9.00 <= -0.1200   <=  0.00
+     x4|                                                        |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+No OOB variables to fix, looking at broken relus
+Update lower bound: non-negative lower bound
+UnifyReluPair called with f = x2f, b = x2b
+Unifying relu pair: x2b, x2f
+		Pivot: x2f <--> x4
+			Pivot--clearing 1 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 3 calcs)
+Both variables are now non-basic
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00  1.00                                           |  0.00 <= 0.6000   <=  1.00
+    x2b|                                                        |  0.00 <= 0.6000 * <=  9.00
+    x2f|                                                        |  0.00 <= 0.6200 * <=  9.00
+ B  x3b|        -1.00       -1.00                               | -9.00 <= -0.6000   <=  0.00
+ B  x3f|        -0.20             -1.00                         | -9.00 <= -0.1200   <=  0.00
+ B   x4|        -0.20  1.00             -1.00                   |  0.50 <= 0.5000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+		Update: x2b += 0.02
+Mark var as dissolved: 2 (Type: Merge)
+Tableau after unification:
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00        1.00                                     |  0.00 <= 0.6200   <=  1.00
+    x2b|                                                        |  0.00 <= 0.6200   <=  9.00
+    x2f|                                                        |  0.00 <= 0.6200   <=  9.00
+ B  x3b|              -1.00 -1.00                               | -9.00 <= -0.6200   <=  0.00
+ B  x3f|              -0.20       -1.00                         | -9.00 <= -0.1240   <=  0.00
+ B   x4|               0.80             -1.00                   |  0.50 <= 0.4960 * <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+Attempting broken-relu fix on var: x2f
+fixBrokenReluVariable Starting: var = x2b, delta = 0.000000
+Var x2b isn't basic; no pivot needed, simply updating
+Progress starting
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+ B   x1|  -1.00        1.00                                     |  0.00 <= 0.6200   <=  1.00
+    x2b|                                                        |  0.00 <= 0.6200   <=  9.00
+    x2f|                                                        |  0.00 <= 0.6200   <=  9.00
+ B  x3b|              -1.00 -1.00                               | -9.00 <= -0.6200   <=  0.00
+ B  x3f|              -0.20       -1.00                         | -9.00 <= -0.1240   <=  0.00
+ B   x4|               0.80             -1.00                   |  0.50 <= 0.4960 * <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+Progress: have OOB vars
+GLPK: number of iterations = 2
+LP solver solved the problem. Updating tableau and assignment
+		Pivot: x1 <--> x2f
+			Pivot--clearing 4 column entries--starting
+			Pivot--clearing column entries--done (Pivot: 0 milli, 11 calcs)
+
+It can be solved. current state is: 
+
+Visiting state:
+
+       |     x1   x2b   x2f   x3b   x3f    x4    x5    x6    x7 | Assignment               
+-------------------------------------------------------------------------------------------
+     x1|                                                        |  0.00 <= 1.0000   <=  1.00
+    x2b|                                                        |  0.00 <= 0.6200   <=  9.00
+ B  x2f|   1.00       -1.00                                     |  0.00 <= 1.0000   <=  9.00
+ B  x3b|  -1.00             -1.00                               | -9.00 <= -1.0000   <=  0.00
+ B  x3f|  -0.20                   -1.00                         | -9.00 <= -0.2000   <=  0.00
+ B   x4|   0.80                         -1.00                   |  0.50 <= 0.8000   <=  1.00
+     x5|                                                        |  0.00 <= 0.0000   <=  0.00
+     x6|                                                        |  0.00 <= 0.0000   <=  0.00
+     x7|                                                        |  0.00 <= 0.0000   <=  0.00
+
+
+----- printStatistics():find an SAT answer ----
+
+22:59:09 Statistics update:
+	Calls to 'progress': 16. Total time: 0 milli. Average: 0 milli
+	Pivot operations: 20. Total pivot time: 0 milli.
+	Average pivot time: 0 milli
+	Average time per calcuation in pivot: 0.00000 milli
+	Average number of calculations in pivot: 6
+	Average number of broken relues per 'progress': 1
+	Broken Relus Fixed: 11 (Fs: 2, Bs: 11, fix-by-pivot: 9, fix-by-update: 4)
+	Relu-to-OOB step ratio: 11 / 5 = 2.200000%. Avg oob steps per relu: 0.45.
+	Almost broken relus encountered: 0. Nuked: 0
+	Time in TightenAllBounds: 0 milli. Bounds tightened: 0
+	Relu pairs dissolved: 2. Num splits: 1. Num merges: 1 (remaining: 0 / 2)
+	Num LP solver invocations: 5. Found solution: 3. No Solution: 2. Failed: 0. Incorrect assignments: 0.
+		Total time in LP solver: 0 milli. Max: 0 milli. Avg per invocation: 0 milli
+		Number of pivots in LP solver: 10. Average time per LP pivot operation: 0 milli
+		Total time extracting tableaus after LP solved: 0 milli. Average: 0 milli.
+		Total time evaulating GLPK rows: 0
+		Glpk bound reports: 16. On slacks: 0 (= 0%). Ignored due to small coefficients: 0. Used: 100.00%
+		Number of GLPK-derived bounds: 15. On slacks: 0 (= 0.00%). Time: 0 milli. Relus consequently dissolved: 0
+		Fix-relu-invariant hook invocations: 0. Actual repairs: 0 (= 0%). Ignore to prevent cycles: 0
+	Average number of broken relu pairs after glpk invocation: 0.666667. Max: 1. Broken and non-basic pairs: 0
+	Vars with infinite bounds: 0 / 9
+	Eliminated vars: 3
+	Stack: Current depth is: 2 (maximal = 2, min second phase = 1).
+	       So far: 2 splits, 3 merges, 1 pops. Total visited states: 5
+		Pops caused by conflict analysis: 0
+		Total time in smtCore: 0 milli
+	Current degradation: 0.0000000000. Time spent checking: 0 milli. Max measured: 0.0000000000.
+	Number of restorations: 0. Total time: 0 milli. Average: 0.000000
+
+
+	Summary: Total: 0 milli
+		1. GLPK: 0 milli (0%) 
+		2. Extraction + Postprocessing: 0 milli (0%)
+		3. Tightening bounds: 0 milli (0%)
+		4. Stack operations: 0 milli (0%)
+		5. Tableau restoration operations: 0 milli (0%)
+		6. Unaccounted for: 0 milli (0%)
+
+printCurrentAE in solve()'s main loop:
+This is a adversial example: 1 
+Input Variable 0 : value = 1.0000000000 
+Output Variable 1 : value = 0.8000000000 
+
+*** Solved! ***
+
+
+===========================
+Summary: the verification result is : SAT 
+
+This is a adversial example: 1 
+input[0] = 1.000000.
+output[1] = 0.8000000000.
+
+-------------------------
